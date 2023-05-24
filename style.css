@@ -11,7 +11,7 @@ body {
 }
 
 #object {
-    background: #3e4170;
+    background: #ff9d00;
     width: 60px;
     aspect-ratio: 1;
     transform: translateY(-60px);
@@ -25,10 +25,9 @@ body {
     animation-timing-function: linear;
 }
 
-/* новая анимация (движения) */
+/* анимация (движения) */
 @keyframes movement {
     to {
         transform: translateY(400px);
-        /* width: 30px; */
     }
 }

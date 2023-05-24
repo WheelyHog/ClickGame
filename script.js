@@ -27,7 +27,7 @@ function hit() {
   object.classList.remove('start');
   void object.offsetWidth;
   object.classList.add('start');
-
+  
   let random_offset = Math.floor(Math.random() * 340);
   object.style.left = `${random_offset}px`;
 
