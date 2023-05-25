@@ -28,7 +28,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 100px;
-  cursor: url("/images/cursor.png"), auto;
+  cursor: url("images/cursor.png"), auto;
 }
 
 header {
