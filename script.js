@@ -1,55 +1,65 @@
 function start_game() {
-  object.classList.toggle("start");
-  document.title = "Score: 0";
-  score = 0;
+	object.classList.toggle('start');
+	document.title = 'Score: 0';
+	score = 0;
 
-  background_music.pause();
-  paragraph.innerHTML = score;
+	background_music.pause();
+	paragraph.innerHTML = score;
+}
+
+let tempSpeed = 1.5;
+function incrSpeed() {
+	tempSpeed = tempSpeed - 0.5;
+	object.style.animationDuration = `${tempSpeed}s`;
 }
 
 function miss(event) {
-  if (event.target.id == "area") {
-    score--;
-    paragraph.innerHTML = score;
-    document.title = `Score: ${score}`;
 
-    miss_sound.currentTime = 0;
-    miss_sound.play();
+	if (event.target.id == 'area') {
+		score--;
+		paragraph.innerHTML = score;
+		document.title = `Score: ${score}`;
 
-    if (score <= 0) {
-      finish_game();
-      
-    }
-  }
+		miss_sound.currentTime = 0;
+		miss_sound.play();
+
+		if (score <= 0) {
+			finish_game();
+		}
+	}
+
 }
 
 function finish_game() {
-  alert(`You lose. Score ${score}`);
-  start_game();
+	alert(`You lose. Score ${score}`);
+	start_game();
 }
 
 function hit() {
-  score++;
-  paragraph.innerHTML = score;
-  document.title = `Score: ${score}`;
+	score++;
+	if (score % 5 === 0) {
+		incrSpeed();
+	}
+	paragraph.innerHTML = score;
+	document.title = `Score: ${score}`;
 
-  object.classList.remove("start");
-  void object.offsetWidth;
-  object.classList.add("start");
+	object.classList.remove('start');
+	void object.offsetWidth;
+	object.classList.add('start');
 
-  let random_offset = Math.floor(Math.random() * 340);
-  object.style.left = `${random_offset}px`;
+	let random_offset = Math.floor(Math.random() * 340);
+	object.style.left = `${random_offset}px`;
 
-  hit_sound.currentTime = 0;
-  hit_sound.play();
+	hit_sound.currentTime = 0;
+	hit_sound.play();
 }
 
 let score = 0;
-let object = document.querySelector("#object");
+let object = document.querySelector('#object');
 
-const hit_sound = new Audio("sounds/hit.wav");
-const miss_sound = new Audio("sounds/miss.wav");
-const background_music = new Audio("sounds/background_music.mp3");
+const hit_sound = new Audio('sounds/hit.wav');
+const miss_sound = new Audio('sounds/miss.wav');
+const background_music = new Audio('sounds/background_music.mp3');
 
 document.addEventListener('mouseover', function() {
   background_music.play();
@@ -57,9 +67,9 @@ document.addEventListener('mouseover', function() {
 
 
 // const header = document.getElementById('header')
-const score_p = document.querySelector("score");
+const score_p = document.querySelector('score');
 
-const paragraph = document.createElement("p");
+const paragraph = document.createElement('p');
 paragraph.innerHTML = score;
-const header = document.querySelector("header");
+const header = document.querySelector('header');
 header.append(paragraph);
