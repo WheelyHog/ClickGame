@@ -2,6 +2,14 @@ body {
     background: #3e4170;
 }
 
+header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: white;
+}
+
+
 #area {
     width: 400px;
     aspect-ratio: 1;
