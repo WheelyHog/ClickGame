@@ -1,9 +1,9 @@
 :root {
-	--black-color: #000;
-	--white-color: #fff;
-	--brand-color: #3e4170;
-	--game-color: #ff9d00;
-	--hover-time: .4s;
+  --black-color: #000;
+  --white-color: #fff;
+  --brand-color: #3e4170;
+  --game-color: #ff9d00;
+  --hover-time: 0.4s;
 }
 
 * {
@@ -28,7 +28,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 100px;
-  cursor: url("/images/cursor.png"), auto;
+  cursor: url("images/cursor.png"), auto;
 }
 
 header {
@@ -73,10 +73,11 @@ header {
 }
 
 #object {
-  background-color: var(--game-color);
-  width: 60px;
+  /* background-color: var(--game-color);  */
+  background-image: url("images/box.png");
+  width: 80px;
   aspect-ratio: 1;
-  transform: translateY(-60px);
+  transform: translateY(-80px);
   position: relative;
 }
 

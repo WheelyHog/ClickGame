@@ -15,7 +15,6 @@ function miss(event) {
 
     miss_sound.currentTime = 0;
     miss_sound.play();
-    fail_sound.play()
 
     if (score <= 0) {
       finish_game();
@@ -50,12 +49,11 @@ let object = document.querySelector("#object");
 
 const hit_sound = new Audio("sounds/hit.wav");
 const miss_sound = new Audio("sounds/miss.wav");
-const fail_sound = new Audio("sounds/failSound.mp3");
 const background_music = new Audio("sounds/background_music.mp3");
-document.addEventListener('mouseover', function() {
-  background_music.play()
-}, {once: true})
 
+document.addEventListener('mouseover', function() {
+  background_music.play();
+}, {once: true});
 
 
 // const header = document.getElementById('header')
