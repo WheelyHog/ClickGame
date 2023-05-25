@@ -18,6 +18,7 @@ function miss(event) {
 
     if (score <= 0) {
       finish_game();
+      
     }
   }
 }
@@ -52,7 +53,8 @@ const background_music = new Audio("sounds/background_music.mp3");
 
 document.addEventListener('mouseover', function() {
   background_music.play();
-});
+}, {once: true});
+
 
 // const header = document.getElementById('header')
 const score_p = document.querySelector("score");
