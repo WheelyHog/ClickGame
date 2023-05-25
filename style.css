@@ -27,6 +27,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	gap: 100px;
+  cursor: url("/images/cursor.png"), auto;
 }
 
 header {
@@ -46,7 +47,6 @@ header {
 	outline: none;
 	cursor: pointer;
 	transition: border-color var(--hover-time) ease, color var(--hover-time) ease, background-color var(--hover-time) ease;
-
 }
 
 #start:focus {
@@ -83,6 +83,12 @@ header {
 	animation-duration: 1.5s;
 	animation-iteration-count: infinite;
 	animation-timing-function: linear;
+
+  width: 400px;
+  aspect-ratio: 1;
+  background: #fff;
+  margin-top: 100px;
+  overflow: hidden;
 }
 
 /* анимация (движения) */
@@ -91,3 +97,4 @@ header {
 		transform: translateY(400px);
 	}
 }
+
