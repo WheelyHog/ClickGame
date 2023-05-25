@@ -1,5 +1,33 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+
+	--black-color: #000;
+	--white-color: #fff;
+	--brand-color: #3e4170;
+	--game-color: #ff9d00;
+
+	--hover-time: .4s;
+}
+
 body {
-    background: #3e4170;
+	background-color: var(--brand-color);
+}
+
+#playground {
+	max-width: 1230px;
+	width: 100%;
+	height: 100vh;
+	padding: 30px 15px;
+	margin: 0 auto;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 100px;
+  cursor: url("/images/cursor.png"), auto;
 }
 
 header {
@@ -9,33 +37,65 @@ header {
     color: white;
 }
 
+#start {
+	position: relative;
+	width: 80px;
+	height: 30px;
+	font-weight: 600;
+	text-transform: uppercase;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	outline: none;
+	cursor: pointer;
+	transition: border-color var(--hover-time) ease, color var(--hover-time) ease, background-color var(--hover-time) ease;
+}
+
+#start:focus {
+	border-color: var(--black-color)
+}
+
+#start:hover {
+	color: var(--white-color);
+	background-color: var(--game-color);
+}
+
+#start:active {
+	top: 1px;
+}
+
 
 #area {
-    width: 400px;
-    aspect-ratio: 1;
-    background: #fff;
-    margin-top: 100px;
-    overflow: hidden;
+	width: 400px;
+	aspect-ratio: 1;
+	background: #fff;
+	overflow: hidden;
 }
 
 #object {
-    background: #ff9d00;
-    width: 60px;
-    aspect-ratio: 1;
-    transform: translateY(-60px);
-    position: relative;
+	background-color: var(--game-color);
+	width: 60px;
+	aspect-ratio: 1;
+	transform: translateY(-60px);
+	position: relative;
 }
 
 #object.start {
-    animation-name: movement;
-    animation-duration: 1.5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+	animation-name: movement;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+
+  width: 400px;
+  aspect-ratio: 1;
+  background: #fff;
+  margin-top: 100px;
+  overflow: hidden;
 }
 
 /* анимация (движения) */
 @keyframes movement {
-    to {
-        transform: translateY(400px);
-    }
+	to {
+		transform: translateY(400px);
+	}
 }
+
