@@ -49,8 +49,9 @@ let object = document.querySelector("#object");
 const hit_sound = new Audio("sounds/hit.wav");
 const miss_sound = new Audio("sounds/miss.wav");
 const background_music = new Audio("sounds/background_music.mp3");
-
-background_music.play();
+document.addEventListener('DOMContentLoaded', function() {
+  background_music.play()
+})
 
 // const header = document.getElementById('header')
 const score_p = document.querySelector("score");
