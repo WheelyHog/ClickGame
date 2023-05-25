@@ -50,7 +50,7 @@ const hit_sound = new Audio("sounds/hit.wav");
 const miss_sound = new Audio("sounds/miss.wav");
 const background_music = new Audio("sounds/background_music.mp3");
 document.addEventListener('DOMContentLoaded', function() {
-  background_music.play();
+  background_music.play()
 })
 
 // const header = document.getElementById('header')
