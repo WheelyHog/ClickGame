@@ -1,4 +1,7 @@
 function start_game() {
+  object.classList.toggle("start");
+  document.title = "Score: 0";
+  score = 0;
   console.log("works start game");
   object.classList.toggle("start");
   document.title = "Score: 0";
@@ -13,6 +16,9 @@ function miss(event) {
     score--;
     paragraph.innerHTML = score;
     document.title = `Score: ${score}`;
+
+    miss_sound.currentTime = 0;
+    miss_sound.play();
 
     if (score <= 0) {
       finish_game();
@@ -45,6 +51,7 @@ let score = 0;
 let object = document.querySelector("#object");
 
 const hit_sound = new Audio("sounds/hit.wav");
+const miss_sound = new Audio("sounds/miss.wav");
 const background_music = new Audio("sounds/background_music.mp3");
 
 background_music.play();
