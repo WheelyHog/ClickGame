@@ -2,6 +2,7 @@ function start_game() {
   object.classList.toggle('start');
   document.title = 'Score: 0';
   score = 0;
+  background_music.pause();
 }
 
 function miss(event) {
@@ -39,3 +40,6 @@ let score = 0;
 let object = document.querySelector('#object');
 
 const hit_sound = new Audio('sounds/hit.wav');
+
+const background_music = new Audio('sounds/background_music.mp3')
+background_music.play();
