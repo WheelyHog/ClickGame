@@ -1,17 +1,18 @@
-
-
 function start_game() {
-  object.classList.toggle('start');
-  document.title = 'Score: 0';
+  object.classList.toggle("start");
+  document.title = "Score: 0";
   score = 0;
-  paragraph.innerHTML = score
+  paragraph.innerHTML = score;
 }
 
 function miss(event) {
   if (event.target.id == "area") {
     score--;
-    paragraph.innerHTML = score
+    paragraph.innerHTML = score;
     document.title = `Score: ${score}`;
+
+    miss_sound.currentTime = 0;
+    miss_sound.play();
 
     if (score <= 0) {
       finish_game();
@@ -26,12 +27,12 @@ function finish_game() {
 
 function hit() {
   score++;
-  paragraph.innerHTML = score
+  paragraph.innerHTML = score;
   document.title = `Score: ${score}`;
 
-  object.classList.remove('start');
+  object.classList.remove("start");
   void object.offsetWidth;
-  object.classList.add('start');
+  object.classList.add("start");
 
   let random_offset = Math.floor(Math.random() * 340);
   object.style.left = `${random_offset}px`;
@@ -41,14 +42,15 @@ function hit() {
 }
 
 let score = 0;
-let object = document.querySelector('#object');
+let object = document.querySelector("#object");
 
-const hit_sound = new Audio('sounds/hit.wav');
+const hit_sound = new Audio("sounds/hit.wav");
+const miss_sound = new Audio("sounds/miss.wav");
 
 // const header = document.getElementById('header')
-const score_p = document.querySelector('score')
+const score_p = document.querySelector("score");
 
-const paragraph = document.createElement('p')
-paragraph.innerHTML = score
-const header = document.querySelector('header')
-header.append(paragraph)
+const paragraph = document.createElement("p");
+paragraph.innerHTML = score;
+const header = document.querySelector("header");
+header.append(paragraph);
