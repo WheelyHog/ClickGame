@@ -2,10 +2,6 @@ function start_game() {
   object.classList.toggle("start");
   document.title = "Score: 0";
   score = 0;
-  console.log("works start game");
-  object.classList.toggle("start");
-  document.title = "Score: 0";
-  score = 0;
 
   background_music.pause();
   paragraph.innerHTML = score;
