@@ -38,6 +38,11 @@ header {
   color: white;
 }
 
+i {
+  color: yellow;
+  font-size: 30px;
+}
+
 #start {
   position: relative;
   width: 80px;

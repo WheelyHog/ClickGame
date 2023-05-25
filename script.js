@@ -7,9 +7,19 @@ function start_game() {
 	paragraph.innerHTML = score;
 }
 
+function addAward() {
+	awards_container.innerHTML = ''
+	const limit = Math.abs(score / 5)
+	for (i = 0; i < limit; i++) {
+
+		awards_container.innerHTML += icon
+	}
+
+}
+
 let tempSpeed = 1.5;
 function incrSpeed() {
-	tempSpeed = tempSpeed - 0.5;
+	tempSpeed = tempSpeed - 0.1;
 	object.style.animationDuration = `${tempSpeed}s`;
 }
 
@@ -17,6 +27,7 @@ function miss(event) {
 
 	if (event.target.id == 'area') {
 		score--;
+		addAward()
 		paragraph.innerHTML = score;
 		document.title = `Score: ${score}`;
 
@@ -38,6 +49,8 @@ function finish_game() {
 function hit() {
 	score++;
 	if (score % 5 === 0) {
+
+		addAward();
 		incrSpeed();
 	}
 	paragraph.innerHTML = score;
@@ -61,14 +74,15 @@ const hit_sound = new Audio('sounds/hit.wav');
 const miss_sound = new Audio('sounds/miss.wav');
 const background_music = new Audio('sounds/background_music.mp3');
 
-document.addEventListener('mouseover', function() {
-  background_music.play();
-}, {once: true});
+document.addEventListener('mouseover', function () {
+	background_music.play();
+}, { once: true });
 
 
-// const header = document.getElementById('header')
 const score_p = document.querySelector('score');
 
+const awards_container = document.querySelector("#awards")
+const icon = '<i class="las la-medal"></i>'
 const paragraph = document.createElement('p');
 paragraph.innerHTML = score;
 const header = document.querySelector('header');
